@@ -1,0 +1,19 @@
+{
+  "name": "learn-fastify",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "convict": "^4.2.0",
+    "fastify": "^1.4.0",
+    "fastify-swagger": "^0.10.2",
+    "mongoose": "^5.0.17",
+    "pino": "^4.16.1",
+    "require-directory": "^2.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}
