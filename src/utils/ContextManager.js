@@ -7,7 +7,9 @@ class ContextManager {
     if (this.context) {
       return
     }
+
     this.context = context
+    // TODO init the following by some markers
     this.databases = {}
     this.repositories = {}
   }
@@ -16,13 +18,12 @@ class ContextManager {
 
   getDatabase(name) { return this.databases[name] }
   setDatabase(name, database) { this.databases[name] = database }
+
   getDatabases() { return this.databases }
   setDatabases(databases) { this.databases = databases }
 
   getRepository(name) { return this.repositories[name] }
   setRepository(name, instance) { this.repositories[name] = instance }
-
-  
 }
 
 module.exports = new ContextManager()
