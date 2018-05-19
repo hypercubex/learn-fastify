@@ -5,7 +5,6 @@ const logger = require('../utils/logger')
 module.exports = {
   options: { prefix: '/books' },
   routes: (fastify, opts, next) => {
-    logger.debug('services', fastify.services)
     fastify.route({
       method: 'GET',
       url: '/',
