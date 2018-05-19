@@ -2,15 +2,12 @@
 
 const { modelName, schema, collectionName } = require('../models/books/Books')
 const logger = require('../utils/logger')
+
 const dbName = 'books'
 
 class BookRepository {
-  constructor(database) {
-    this.Books = database.model(modelName, schema, collectionName)
-  }
-
-  test() {
-    logger.debug('test', BookRepository)
+  constructor(databases) {
+    this.Books = databases[dbName].model(modelName, schema, collectionName)
   }
 
   async getBooks(start = 0, limit = 25) {
@@ -19,7 +16,4 @@ class BookRepository {
   }
 }
 
-module.exports = {
-  classInstance: BookRepository,
-  dbName
-}
+module.exports = BookRepository
